@@ -70,7 +70,7 @@ platforms: linux/arm/v7, linux/arm64/v8, linux/amd64
 ```
 Do zbudowania obrazu należy spushować branch na repozytorium poprzez polecenie:
 ```sh
-git push --force github HEAD:master
+git push
 ```
 Push na GitHub Actions:
 ![16](./screeny/16.png)
@@ -78,8 +78,8 @@ Push na GitHub Actions:
 Do opublikowania image na GitHub Container Registry należy podać adres rejestru do logowania oraz prefiks do nazwy tagu w kroku budowania. By nie duplikować adresu repozytorium oraz nazwy tagu, zapisać je trzeba w zmiennych środowiskowych.
 ```sh
 env:
-registry: ghcr.io
-IMAGE_NAME: technologie_chmurowe_zadanie_1:latest
+    registry: ghcr.io
+    IMAGE_NAME: technologie_chmurowe_zadanie_1:latest
 
 ```
 Należy wykorzystać te zmienne jako parametry do logowania do repozytorium oraz budowania i publikacji. Do parametru tags trzeba podać 2 tagi. 1 odwołujący się do DockerHub i 2 do GitHub Container Registry.
